@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# GoFood
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GoFood is a food ordering application built using the MERN stack (MongoDB, Express, React, Node.js). The application allows users to browse a variety of food items, place orders, and manage their orders seamlessly. This README provides an overview of the project, setup instructions, and usage guidelines.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User authentication and authorization
+- Browse and search food items
+- Add items to cart
+- Place orders
+- View order history
+- Admin dashboard to manage food items and orders
+- Responsive design for mobile and desktop users
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React, Bootstrap
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **State Management:** Redux
+- **Authentication:** JWT (JSON Web Tokens)
+- **Styling:** Bootstrap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+Before you begin, ensure you have the following installed on your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14.x or higher)
+- npm (v6.x or higher) or yarn (v1.x or higher)
+- MongoDB (v4.x or higher)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Ashura707/GoFood.git
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies for both the client and server:
+   ```bash
+   cd gofood
+   npm install
+   cd backend
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Set up environment variables:
+   - Create a `.env` file in the `server` directory.
+   - Add the following environment variables to the `.env` file:
+     ```env
+     PORT=5000
+     MONGODB_URI=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret
+     ```
 
-### `npm run eject`
+## Running the Application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Start the backend server:
+   ```bash
+   cd backend
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Start the frontend development server:
+   ```bash
+   cd gofood
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Folder Structure
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - **public**: Public assets and the main HTML file.
+  - **src**: Source code for the React application.
+    - **components**: Reusable React components.
+      - **images**: Folder containing image assets.
+      - **card.js**: Component for displaying food items in a card format.
+      - **carousel.js**: Component for the image carousel.
+      - **contextreducer.js**: Reducer for managing global state.
+      - **footer.js**: Footer component.
+      - **navbar.js**: Navigation bar component.
+    - **screens**: Page components representing different routes.
+      - **cart.js**: Cart page component.
+      - **home.js**: Home page component.
+      - **login.js**: Login page component.
+      - **myorder.js**: My Orders page component.
+      - **signup.js**: Signup page component.
+    - **redux**: Redux setup for state management.
+    - **styles**: Bootstrap CSS styles.
+    - **utils**: Utility functions and constants.
+    
+- **server**: Contains the Node.js backend code.
+  - **controllers**: Functions to handle requests and responses.
+  - **models**: Mongoose models for MongoDB collections.
+  - **routes**: Express routes for the API endpoints.
+  - **middleware**: Custom middleware functions.
+  - **config**: Configuration files and environment setup.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+- **User Registration and Login:**
+  - Users can sign up and log in using their email and password.
+  - Authentication is handled using JWT.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Browsing Food Items:**
+  - Users can browse the available food items on the home page.
+  - Search functionality is provided to find specific items.
 
-### Analyzing the Bundle Size
+- **Adding to Cart and Placing Orders:**
+  - Users can add items to their cart.
+  - Orders can be placed from the cart page.
+  - Order history can be viewed from the user's profile.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Admin Dashboard:**
+  - Admin users can log in to access the admin dashboard.
+  - Admins can manage food items and view all orders.
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We welcome contributions to improve GoFood! Please follow these steps to contribute:
 
-### Advanced Configuration
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Create a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+If you have any questions or suggestions, feel free to reach out to at rohitcr7mishra@gmail.com
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using GoFood! We hope you enjoy it. Happy ordering!
